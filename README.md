@@ -1,4 +1,4 @@
 # Fiddling with Arduino #
 
-A bunch of Arduiono sketches which is just me basically fiddling around and
+A bunch of Arduino sketches which is just me basically fiddling around and
 getting used to it.
