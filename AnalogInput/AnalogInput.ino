@@ -36,6 +36,8 @@ void loop()
     // 5 * 204.6 = 1023)
     float voltage = reading / 204.6;
 
+    // concatenating in c is messy looking and feels wasteful, so I just output
+    // on each line - seems to be the done thing.
     Serial.print("Reading = ");
     Serial.print(reading);
     Serial.print(", voltage = ");
