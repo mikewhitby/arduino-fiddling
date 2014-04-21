@@ -6,8 +6,8 @@
 // the LED pin
 int ledPin = 13;
 
-// the incoming serial data
-int incomingByte = 0;
+// the incoming serial character
+char incomingChar = 0;
 
 void setup()
 {
@@ -23,13 +23,13 @@ void loop()
     // run code only when the serial port has some data waiting
     if (Serial.available()) {
         // read the incoming byte
-        incomingByte = Serial.read();
+        incomingChar = Serial.read();
 
         // turn the LED on (byte 49) or off (byte 48)
-        if (incomingByte == 49) {
+        if (incomingChar == '1') {
             digitalWrite(ledPin, HIGH);
             Serial.print("LED turned on\r\n");
-        } else if (incomingByte == 48) {
+        } else if (incomingChar == '0') {
             digitalWrite(ledPin, LOW);
             Serial.print("LED turned off\r\n");
         } else {
