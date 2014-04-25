@@ -1,6 +1,8 @@
 /**
  * Turns on an led when an LDR detects the board is in shade, which I'm saying
- * is below a reading of 205 (about 1v)
+ * is below a reading of 205 (about 1v), and it only comes back on when the
+ * board is well out of shade, which I'll say is a reading of 307 (about 1.5v).
+ * This lower and upper bound stops rapid switching.
  */
 
 // the LDR input pin
@@ -35,7 +37,7 @@ void loop()
         digitalWrite(ledPin, HIGH);
         ledState = 1;
         Serial.print("Turned LED on\r\n");
-    } else if (reading >= 205 && ledState) {
+    } else if (reading > 300 && ledState) {
         digitalWrite(ledPin, LOW);
         ledState = 0;
         Serial.print("Turned LED off\r\n");
