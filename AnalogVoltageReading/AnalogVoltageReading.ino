@@ -32,7 +32,7 @@ void loop()
     // get the reading, which is from int 0 (0v) to 1023 (5v)
     int reading = analogRead(inputPin);
 
-    // turn the reading into a proper voltage by dividing by 214.6 (because
+    // turn the reading into a proper voltage by dividing by 204.6 (because
     // 5 * 204.6 = 1023)
     float voltage = reading / 204.6;
 
